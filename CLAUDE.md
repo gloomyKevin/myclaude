@@ -37,6 +37,24 @@
 - 禁止项(仍需明确确认):`git push --force`、`git reset --hard`、改写远端已有 commit、任何会丢失 Kevin 工作的操作
 - commit 本身不自动发起,仍需 Kevin 明确授意
 
+## Mac mini 迁移 checklist(暂定 2026-06)
+
+1. 新机装 Python 3.14、Obsidian、SSH key 接到 GitHub
+2. `git clone git@github.com:gloomyKevin/myclaude.git ~/Personal/brain`
+3. `cd ~/Personal/brain/ops && python3 -m venv venv && source venv/bin/activate`
+4. `pip install -r requirements.txt`
+5. `cp .env.example .env`,填入真实 BOT_TOKEN / MY_USER_ID
+6. `ln -s ~/Personal/brain/ops/launchd/com.kevin.brainbot.plist ~/Library/LaunchAgents/com.kevin.brainbot.plist`
+7. `launchctl load ~/Library/LaunchAgents/com.kevin.brainbot.plist`
+8. 如新机器用户名不是 `admin`,需 sed 替换 `ops/launchd/*.plist` 里的 `/Users/admin` 为实际家目录(bot.py 已改用 `Path.home()`,不受影响)
+9. Obsidian 打开 `~/Personal/brain` 作为 vault
+
+**附件 / 高频活档同步**(inbox/ journal/ 不在 git 里):
+```
+rsync -av --delete <old-mac>:/Users/admin/Personal/brain/inbox/ ~/Personal/brain/inbox/
+rsync -av --delete <old-mac>:/Users/admin/Personal/brain/journal/ ~/Personal/brain/journal/
+```
+
 ## 当前阶段
 
 2026 年 4 月 — 全端闭环与容器搭建阶段。
