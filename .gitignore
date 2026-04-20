@@ -1,0 +1,27 @@
+# ============ secrets & environment ============
+.env
+.env.*
+!.env.example
+
+# ============ python ============
+ops/venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ============ logs ============
+*.log
+
+# ============ 高频/敏感捕获(决策 B:不进 git) ============
+inbox/
+journal/
+
+# ============ macOS / IDE ============
+.DS_Store
+.vscode/
+.idea/
+
+# ============ Obsidian workspace state(偏好保留,但别追踪动态 workspace) ============
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache

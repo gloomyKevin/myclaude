@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.kevin.brainbot</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/admin/Personal/brain/ops/venv/bin/python</string>
+        <string>/Users/admin/Personal/brain/ops/bot.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/admin/Personal/brain/ops</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/admin/Personal/brain/ops/bot.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/admin/Personal/brain/ops/bot.err.log</string>
+
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+</dict>
+</plist>
