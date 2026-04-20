@@ -29,6 +29,14 @@
 3. AI 协作者在产出"观察"和"建议"时,应基于仓库事实,不凭空编造
 4. 每个 inbox 条目最终都应被处理(归档到 knowledge/projects 或明确废弃),不留烂尾
 
+## Git / 版本控制约定
+
+- 远端:`git@github.com:gloomyKevin/myclaude.git`(private)
+- 跟踪策略(决策 B):`inbox/ journal/ ops/venv/ .env *.log` 等不进 git,详见 `.gitignore`
+- **自动 push 授权**:Kevin 已授权。AI 协作者完成普通 commit 后应**直接 `git push`**,不必每次确认
+- 禁止项(仍需明确确认):`git push --force`、`git reset --hard`、改写远端已有 commit、任何会丢失 Kevin 工作的操作
+- commit 本身不自动发起,仍需 Kevin 明确授意
+
 ## 当前阶段
 
 2026 年 4 月 — 全端闭环与容器搭建阶段。
